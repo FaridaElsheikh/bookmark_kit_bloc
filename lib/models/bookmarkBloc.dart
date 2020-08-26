@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:bookmark_kit_bloc/Bookmark.dart';
+import 'file:///D:/FlutterProjects/bookmark_kit_bloc/lib/models/bookmark.dart';
 
-import 'Bookmark_API.dart';
+import '../logic/bookmark_API.dart';
 
 class BookmarkBloc {
   final _streamController = StreamController<List<Bookmark>>();
@@ -11,11 +11,11 @@ class BookmarkBloc {
     _streamController.sink.add(Bookmarks);
   }
 
-  Stream<List<Bookmark>> get BookmarkStream => _streamController.stream;
+  Stream<List<Bookmark>> get bookmarkStream => _streamController.stream;
 
   void updateBookmarkList(){
     BookmarkAPI().fetchBookmarks().then((value) {
-      controller=value;
+      controller=value.cast<Bookmark>();
     });
   }
 

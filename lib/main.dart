@@ -1,7 +1,7 @@
-import 'package:bookmark_kit_bloc/BookmarkBloc.dart';
+import 'file:///D:/FlutterProjects/bookmark_kit_bloc/lib/models/bookmarkBloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'BookmarkListPage.dart';
+import 'ui/bookmarkListPage.dart';
 
 void main() {
   final BookmarkBloc _bookmarks = BookmarkBloc();
@@ -10,7 +10,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: StreamBuilder(
-          stream: _bookmarks.BookmarkStream,
+          stream: _bookmarks.bookmarkStream,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
               return BookmarkListPage(snapshot.data);

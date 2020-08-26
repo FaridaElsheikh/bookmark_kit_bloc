@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Bookmark.dart';
-import 'BookmarkContentPage.dart';
+import '../models/bookmark.dart';
+import 'bookmarkContentPage.dart';
 
 class BookmarkListPage extends StatelessWidget {
   final List bookmarks;
